@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس فوتوشوب للمبتدئين - Photoshop Tutorials</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-content {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-right: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tutorial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .tutorial-card h4 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tutorial-icon {
+            font-size: 1.5rem;
+        }
+        
+        .difficulty {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .difficulty.beginner {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .difficulty.intermediate {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .difficulty.advanced {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .step-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: step-counter;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-right: 3rem;
+        }
+        
+        .step-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', Arial, sans-serif;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+        }
+        
+        .tool-tip {
+            background: #e3f2fd;
+            border-right: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .tool-tip h4 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-tip p {
+            color: #424242;
+            margin: 0;
+        }
+        
+        .keyboard-shortcut {
+            background: #333;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .workspace-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        
+        .workspace-section h4 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .workspace-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .workspace-item h5 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .workspace-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+            
+            .tutorial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>تصميم جرافي مع الاستاذ يوسف مصري</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#about">حولي</a></li>
+                    <li><a href="#portfolio">معرض الأعمال</a></li>
+                    <li><li><a href="Page1.html">تعلم التصميم</a></li>
+                    <li><a href="#contact">اتصل بي</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <div class="content-container">
+            <a href="Page1.html" class="back-button">← العودة لصفحة التعلم</a>
+            
+                <h2>🎨  فوتوشوب -الدرس الاول </h2>
+                
+              
+
+            <div class="section">
+                <h2>🖥️ التعرف على واجهة فوتوشوب</h2>
+                <p>قبل البدء في التصميم، يجب أن تتعرف على واجهة البرنامج وأجزائها المختلفة:</p>
+                
+                <div class="workspace-section">
+                    <h4>أجزاء واجهة فوتوشوب:</h4>
+                    <img src="Images/them.png" alt="يوسف مصري - معلم فوتوشوب" style="width: 700px; height: 500px;  border: 3px solid #667eea; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+             
+                    <div class="workspace-grid">
+                        <div class="workspace-item">
+                            <h5>📋 شريط القوائم</h5>
+                            <p>يحتوي على جميع الأوامر والوظائف</p>
+                        </div>
+                        <div class="workspace-item">
+                            <h5>🛠️ صندوق الأدوات</h5>
+                            <p>يحتوي على جميع أدوات الرسم والتعديل</p>
+                        </div>
+                        <div class="workspace-item">
+                            <h5>📊 لوحات التحكم</h5>
+                            <p>تحتوي على خصائص الطبقات والألوان</p>
+                        </div>
+                        <div class="workspace-item">
+                            <h5>🖼️ منطقة العمل</h5>
+                            <p>المكان الذي تعمل فيه على التصميم</p>
+                        </div>
+                    </div>
+                </div>
+                
+              <!--  <div class="tool-tip">
+                    <h4>💡 نصيحة مهمة</h4>
+                    <p>يمكنك تخصيص واجهة فوتوشوب حسب احتياجاتك من خلال قائمة Window</p>
+                </div> -->
+            </div>
+
+            <div class="section">
+                <h2>🛠️ الأدوات الأساسية</h2>
+                <p>إليك أهم الأدوات التي ستحتاجها في بداية رحلتك مع فوتوشوب:</p>
+                
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">✂️</span> أداة التحديد</h4>
+                        <span class="difficulty beginner">مبتدئ</span>
+                        <p><strong>الاستخدام:</strong> لتحديد أجزاء من الصورة</p>
+                        <ul class="step-list">
+                            <li>اختر أداة التحديد من صندوق الأدوات</li>
+                            <li>اسحب الماوس لتحديد المنطقة المطلوبة</li>
+                            <li>يمكنك تعديل التحديد باستخدام مفاتيح التحكم</li>
+                        </ul>
+                        <p><strong>اختصار لوحة المفاتيح:</strong> <span class="keyboard-shortcut">M</span></p>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">🖌️</span> أداة الفرشاة</h4>
+                        <span class="difficulty beginner">مبتدئ</span>
+                        <p><strong>الاستخدام:</strong> للرسم والتلوين</p>
+                        <ul class="step-list">
+                            <li>اختر أداة الفرشاة</li>
+                            <li>اضبط حجم الفرشاة من شريط الخصائص</li>
+                            <li>اختر اللون من لوحة الألوان</li>
+                            <li>ابدأ الرسم بالضغط والسحب</li>
+                        </ul>
+                        <p><strong>اختصار لوحة المفاتيح:</strong> <span class="keyboard-shortcut">B</span></p>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">📝</span> أداة النص</h4>
+                        <span class="difficulty beginner">مبتدئ</span>
+                        <p><strong>الاستخدام:</strong> لإضافة النصوص للتصميم</p>
+                        <ul class="step-list">
+                            <li>اختر أداة النص</li>
+                            <li>انقر في المكان المطلوب</li>
+                            <li>اكتب النص</li>
+                            <li>اضبط الخط والحجم من شريط الخصائص</li>
+                        </ul>
+                        <p><strong>اختصار لوحة المفاتيح:</strong> <span class="keyboard-shortcut">T</span></p>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">🔄</span> أداة الاستنساخ</h4>
+                        <span class="difficulty intermediate">متوسط</span>
+                        <p><strong>الاستخدام:</strong> لنسخ أجزاء من الصورة</p>
+                        <ul class="step-list">
+                            <li>اختر أداة الاستنساخ</li>
+                            <li>اضغط Alt وانقر على المنطقة المراد نسخها</li>
+                            <li>انقر واسحب في المكان الجديد</li>
+                            <li>اضبط الشفافية للحصول على تأثير طبيعي</li>
+                        </ul>
+                        <p><strong>اختصار لوحة المفاتيح:</strong> <span class="keyboard-shortcut">S</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📚 دروس عملية خطوة بخطوة</h2>
+                <p>الآن سننتقل للدروس العملية التي ستطبق فيها ما تعلمته:</p>
+                
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">🖼️</span> تعديل إضاءة الصورة</h4>
+                        <span class="difficulty beginner">مبتدئ</span>
+                        <p><strong>الهدف:</strong> تحسين إضاءة الصورة المظلمة</p>
+                        <ul class="step-list">
+                            <li>افتح الصورة في فوتوشوب</li>
+                            <li>اذهب إلى Image > Adjustments > Brightness/Contrast</li>
+                            <li>اضبط شريط السطوع للزيادة</li>
+                            <li>اضبط شريط التباين للحصول على وضوح أفضل</li>
+                            <li>اضغط OK لحفظ التغييرات</li>
+                        </ul>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">🎨</span> تغيير لون عنصر في الصورة</h4>
+                        <span class="difficulty intermediate">متوسط</span>
+                        <p><strong>الهدف:</strong> تغيير لون سيارة أو ملابس في الصورة</p>
+                        <ul class="step-list">
+                            <li>حدد العنصر المراد تغيير لونه</li>
+                            <li>اذهب إلى Image > Adjustments > Hue/Saturation</li>
+                            <li>اضبط شريط Hue لتغيير اللون</li>
+                            <li>اضبط Saturation لزيادة أو تقليل كثافة اللون</li>
+                            <li>اضبط Lightness للتحكم في السطوع</li>
+                        </ul>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">✂️</span> قص صورة من خلفيتها</h4>
+                        <span class="difficulty intermediate">متوسط</span>
+                        <p><strong>الهدف:</strong> إزالة الخلفية من صورة شخص</p>
+                        <ul class="step-list">
+                            <li>استخدم أداة التحديد السريع (Quick Selection)</li>
+                            <li>اسحب على الشخص لتحديده</li>
+                            <li>اضغط Ctrl+Shift+I لعكس التحديد</li>
+                            <li>اضغط Delete لحذف الخلفية</li>
+                            <li>احفظ الصورة بصيغة PNG للحفاظ على الشفافية</li>
+                        </ul>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">🖼️</span> إنشاء شعار بسيط</h4>
+                        <span class="difficulty beginner">مبتدئ</span>
+                        <p><strong>الهدف:</strong> تصميم شعار نصي بسيط</p>
+                        <ul class="step-list">
+                            <li>أنشئ مستند جديد (Ctrl+N)</li>
+                            <li>اختر أداة النص واكتب اسم الشركة</li>
+                            <li>اضبط الخط والحجم واللون</li>
+                            <li>أضف تأثيرات من Layer > Layer Style</li>
+                            <li>احفظ الشعار بصيغة PNG</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>⌨️ اختصارات لوحة المفاتيح المهمة</h2>
+                <p>تعلم هذه الاختصارات لتسريع عملك في فوتوشوب:</p>
+                
+                <div class="tutorial-grid">
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">📁</span> اختصارات الملفات</h4>
+                        <ul class="step-list">
+                            <li><span class="keyboard-shortcut">Ctrl+N</span> - إنشاء مستند جديد</li>
+                            <li><span class="keyboard-shortcut">Ctrl+O</span> - فتح ملف</li>
+                            <li><span class="keyboard-shortcut">Ctrl+S</span> - حفظ الملف</li>
+                            <li><span class="keyboard-shortcut">Ctrl+Shift+S</span> - حفظ باسم</li>
+                            <li><span class="keyboard-shortcut">Ctrl+W</span> - إغلاق الملف</li>
+                        </ul>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">✂️</span> اختصارات التعديل</h4>
+                        <ul class="step-list">
+                            <li><span class="keyboard-shortcut">Ctrl+Z</span> - التراجع</li>
+                            <li><span class="keyboard-shortcut">Ctrl+Shift+Z</span> - إعادة</li>
+                            <li><span class="keyboard-shortcut">Ctrl+C</span> - نسخ</li>
+                            <li><span class="keyboard-shortcut">Ctrl+V</span> - لصق</li>
+                            <li><span class="keyboard-shortcut">Ctrl+T</span> - تحويل</li>
+                        </ul>
+                    </div>
+
+                    <div class="tutorial-card">
+                        <h4><span class="tutorial-icon">👁️</span> اختصارات العرض</h4>
+                        <ul class="step-list">
+                            <li><span class="keyboard-shortcut">Ctrl+0</span> - عرض كامل</li>
+                            <li><span class="keyboard-shortcut">Ctrl++</span> - تكبير</li>
+                            <li><span class="keyboard-shortcut">Ctrl+-</span> - تصغير</li>
+                            <li><span class="keyboard-shortcut">Space</span> - أداة اليد</li>
+                            <li><span class="keyboard-shortcut">Tab</span> - إخفاء/إظهار اللوحات</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💡 نصائح مهمة للمبتدئين</h2>
+                <div class="highlight-box">
+                    <h3>🎯 نصائح للنجاح في فوتوشوب</h3>
+                    <p>مارس يومياً ولا تخف من التجريب - الأخطاء جزء من التعلم!</p>
+                </div>
+                
+                <ul class="step-list">
+                    <li><strong>احفظ عملك باستمرار:</strong> استخدم Ctrl+S كل بضع دقائق</li>
+                    <li><strong>تعلم الطبقات:</strong> استخدم طبقات منفصلة لكل عنصر</li>
+                    <li><strong>احتفظ بنسخ احتياطية:</strong> احفظ نسخة من الملف الأصلي</li>
+                    <li><strong>استخدم الاختصارات:</strong> ستوفر عليك الكثير من الوقت</li>
+                    <li><strong>مارس على صور مختلفة:</strong> جرب تقنيات مختلفة</li>
+                    <li><strong>تعلم من الأخطاء:</strong> كل خطأ يعلمك شيئاً جديداً</li>
+                    <li><strong>استخدم المراجع:</strong> احتفظ بصور مرجعية للاستلهام</li>
+                    <li><strong>لا تستعجل:</strong> التصميم الجيد يحتاج وقت وصبر</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🚀 الخطوات التالية</h2>
+                <p>بعد إتقان هذه الأساسيات، يمكنك الانتقال إلى:</p>
+                <ul class="step-list">
+                    <li>تعلم المزيد من الأدوات المتقدمة</li>
+                    <li>إتقان تقنيات التلاعب بالصور</li>
+                    <li>تعلم تصميم الشعارات المعقدة</li>
+                    <li>إتقان تقنيات الرسم الرقمي</li>
+                    <li>تعلم تصميم الواجهات والمواقع</li>
+                </ul>
+                
+                <div class="tool-tip">
+                    <h4>📚 موارد إضافية</h4>
+                    <p>تذكر أن التعلم عملية مستمرة. استمر في الممارسة واستكشف المزيد من التقنيات المتقدمة!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 يوسف جي.دي - Yousef G.D. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

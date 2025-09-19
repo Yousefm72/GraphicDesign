@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقدمة في التصميم الجرافيكي - Graphic Design Introduction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-content {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-right: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .software-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .software-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .software-card h4 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .software-icon {
+            font-size: 1.5rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-right: 1.5rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', Arial, sans-serif;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding-right: 4rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #667eea;
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .timeline-content h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+            
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                right: 15px;
+            }
+            
+            .timeline-item {
+                padding-right: 2.5rem;
+            }
+            
+            .timeline-item::before {
+                right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>تصميم جرافي مع الاستاذ يوسف مصري</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#about">حولي</a></li>
+                    <li><a href="#portfolio">معرض الأعمال</a></li>
+                    <li><a href="#contact">اتصل بي</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <div class="content-container">
+            <a href="index.html" class="back-button">← العودة للصفحة الرئيسية</a>
+            
+            <div class="section">
+                <h2>🎨 مقدمة في التصميم الجرافيكي</h2>
+                <p>التصميم الجرافيكي هو فن ومهنة تهدف إلى إنشاء محتوى بصري يجمع بين النصوص والصور والألوان والأشكال لنقل رسالة معينة أو إنتاج تأثير بصري مطلوب. يعتبر التصميم الجرافيكي من أهم العناصر في التسويق والإعلان والهوية البصرية للشركات.</p>
+                
+                <div class="highlight-box">
+                    <h3>💡 ما هو التصميم الجرافيكي؟</h3>
+                    <p>هو عملية إبداعية تجمع بين الفن والتكنولوجيا لإنتاج تصاميم بصرية فعالة ومؤثرة</p>
+                </div>
+                
+                <h3>🎯 أهداف التصميم الجرافيكي:</h3>
+                <ul class="features-list">
+                    <li>نقل الرسالة بوضوح وفعالية</li>
+                    <li>جذب انتباه الجمهور المستهدف</li>
+                    <li>إنشاء هوية بصرية مميزة</li>
+                    <li>تحسين تجربة المستخدم</li>
+                    <li>زيادة المبيعات والوعي بالعلامة التجارية</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📚 تاريخ التصميم الجرافيكي</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>القرن الخامس عشر</h4>
+                            <p>اختراع الطباعة وبداية التصميم الطباعي</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>القرن التاسع عشر</h4>
+                            <p>ظهور الإعلانات التجارية والملصقات</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>القرن العشرين</h4>
+                            <p>تطور المدارس الفنية وتأثيرها على التصميم</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>عصر الكمبيوتر</h4>
+                            <p>ثورة التصميم الرقمي وبرامج التصميم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ أهم برامج التصميم الجرافيكي</h2>
+                <p>توجد العديد من البرامج المتخصصة في التصميم الجرافيكي، ولكل منها استخدامات ومميزات خاصة. إليك أهم البرامج التي يجب على كل مصمم جرافيكي معرفتها:</p>
+                
+                <div class="software-grid">
+                    <div class="software-card">
+                        <h4><span class="software-icon">🎨</span> Adobe Photoshop</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> تعديل الصور ومعالجة الصور الرقمية</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>معالجة وتعديل الصور بجودة عالية</li>
+                            <li>إنشاء التصاميم الرقمية</li>
+                            <li>تأثيرات بصرية متقدمة</li>
+                            <li>أدوات الرسم والتصميم</li>
+                            <li>دعم الطبقات والمرشحات</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> تعديل الصور، التصميم الرقمي، إنشاء الشعارات</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="Page2.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem; display: inline-block; transition: transform 0.3s ease;">
+                                📚 تعلم فوتوشوب
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="software-card">
+                        <h4><span class="software-icon">✏️</span> Adobe Illustrator</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> إنشاء الرسوم المتجهة والتصاميم القابلة للتوسيع</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>إنشاء الرسوم المتجهة (Vector Graphics)</li>
+                            <li>تصميم الشعارات والرموز</li>
+                            <li>التصميم الطباعي المتقدم</li>
+                            <li>أدوات الرسم الدقيقة</li>
+                            <li>قابلية التوسيع دون فقدان الجودة</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> تصميم الشعارات، الهوية البصرية، الرسوم التوضيحية</p>
+                    </div>
+
+                    <div class="software-card">
+                        <h4><span class="software-icon">📄</span> Adobe InDesign</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> تصميم المطبوعات والمنشورات</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>تصميم الكتب والمجلات</li>
+                            <li>إنشاء الكتيبات والبروشورات</li>
+                            <li>إدارة النصوص الطويلة</li>
+                            <li>تخطيط الصفحات المتقدم</li>
+                            <li>دعم الطباعة الاحترافية</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> المطبوعات، المنشورات، التخطيط الطباعي</p>
+                    </div>
+
+                    <div class="software-card">
+                        <h4><span class="software-icon">🎬</span> Adobe After Effects</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> إنشاء الرسوم المتحركة والتأثيرات البصرية</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>إنشاء الرسوم المتحركة</li>
+                            <li>تأثيرات بصرية متقدمة</li>
+                            <li>توليف الفيديو</li>
+                            <li>تأثيرات النص المتحرك</li>
+                            <li>دعم الطبقات المعقدة</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> الرسوم المتحركة، الفيديو، التأثيرات البصرية</p>
+                    </div>
+
+                    <div class="software-card">
+                        <h4><span class="software-icon">🎨</span> CorelDRAW</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> بديل قوي لـ Illustrator في الرسوم المتجهة</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>إنشاء الرسوم المتجهة</li>
+                            <li>تصميم الشعارات والرموز</li>
+                            <li>أدوات الرسم المتقدمة</li>
+                            <li>دعم الطباعة</li>
+                            <li>واجهة سهلة الاستخدام</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> التصميم المتجه، الشعارات، الرسوم التوضيحية</p>
+                    </div>
+
+                    <div class="software-card">
+                        <h4><span class="software-icon">🖼️</span> Canva</h4>
+                        <p><strong>الاستخدام الرئيسي:</strong> تصميم سهل ومبسط للمبتدئين</p>
+                        <h5>المميزات:</h5>
+                        <ul class="features-list">
+                            <li>واجهة سهلة وبسيطة</li>
+                            <li>قوالب جاهزة</li>
+                            <li>مكتبة صور وأيقونات</li>
+                            <li>تصميم سريع</li>
+                            <li>مشاركة سهلة</li>
+                        </ul>
+                        <p><strong>مثالي ل:</strong> المبتدئين، التصاميم السريعة، وسائل التواصل الاجتماعي</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎓 أساسيات التصميم الجرافيكي</h2>
+                <h3>1. العناصر الأساسية:</h3>
+                <ul class="features-list">
+                    <li><strong>النقطة:</strong> أصغر عنصر بصري</li>
+                    <li><strong>الخط:</strong> يربط النقاط ويشكل الأشكال</li>
+                    <li><strong>الشكل:</strong> المساحات المحددة بالخطوط</li>
+                    <li><strong>اللون:</strong> يضيف الحياة والانفعال للتصميم</li>
+                    <li><strong>الملمس:</strong> يضيف العمق والواقعية</li>
+                </ul>
+
+                <h3>2. مبادئ التصميم:</h3>
+                <ul class="features-list">
+                    <li><strong>التوازن:</strong> توزيع العناصر بشكل متوازن</li>
+                    <li><strong>التباين:</strong> استخدام الاختلافات لإبراز العناصر</li>
+                    <li><strong>التناسق:</strong> وحدة العناصر في التصميم</li>
+                    <li><strong>التكرار:</strong> استخدام العناصر المتشابهة</li>
+                    <li><strong>التدرج:</strong> الانتقال التدريجي بين العناصر</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🚀 نصائح للمبتدئين في التصميم الجرافيكي</h2>
+                <div class="highlight-box">
+                    <h3>💡 نصائح مهمة</h3>
+                    <p>ابدأ بالتعلم التدريجي ومارس يومياً لتحسين مهاراتك</p>
+                </div>
+                
+                <ul class="features-list">
+                    <li>ابدأ بتعلم أساسيات التصميم قبل البرامج</li>
+                    <li>مارس الرسم اليدوي لتنمية الإحساس البصري</li>
+                    <li>ادرس أعمال المصممين المحترفين</li>
+                    <li>تعلم برنامج واحد بعمق قبل الانتقال لآخر</li>
+                    <li>احتفظ بمحفظة أعمالك لتتبع تطورك</li>
+                    <li>اطلب النقد البناء من المصممين الآخرين</li>
+                    <li>تابع أحدث الاتجاهات في التصميم</li>
+                    <li>لا تخف من التجريب والأخطاء</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📈 مستقبل التصميم الجرافيكي</h2>
+                <p>يتطور مجال التصميم الجرافيكي بسرعة مع التقدم التكنولوجي. من أهم الاتجاهات المستقبلية:</p>
+                <ul class="features-list">
+                    <li>التصميم التفاعلي والتفاعلي</li>
+                    <li>الذكاء الاصطناعي في التصميم</li>
+                    <li>التصميم ثلاثي الأبعاد</li>
+                    <li>الواقع المعزز والافتراضي</li>
+                    <li>التصميم المستجيب للبيئة</li>
+                    <li>التصميم المستدام والصديق للبيئة</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 يوسف جي.دي - Yousef G.D. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
