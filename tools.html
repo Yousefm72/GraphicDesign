@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات الفوتوشوب - دليل شامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-links a {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .tool-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tool-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .tool-item:hover {
+            background: #e3f2fd;
+            transform: translateX(-5px);
+        }
+
+        .tool-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .tool-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tool-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .tool-usage {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2e7d32;
+        }
+
+        .shortcut {
+            background: #fff3cd;
+            color: #856404;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .nav-icon {
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 أدوات الفوتوشوب</h1>
+            <p class="subtitle">دليل شامل لجميع أدوات Adobe Photoshop مع الشرح باللغة العربية</p>
+        </header>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" class="nav-button">
+                <span class="nav-icon">🏠</span>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+
+        <nav class="nav-menu">
+            <h2>🔗 التنقل السريع</h2>
+            <div class="nav-links">
+          
+                <a href="#selection-tools">أدوات التحديد</a>
+                <a href="#brush-tools">أدوات الرسم</a>
+                <a href="#text-tools">أدوات النص</a>
+                <a href="#shape-tools">أدوات الأشكال</a>
+                <a href="#navigation-tools">أدوات التنقل</a>
+                <a href="#color-tools">أدوات الألوان</a>
+                <a href="#filter-tools">أدوات التصفية</a>
+            </div>
+      
+        </nav>
+            
+        <section id="selection-tools" class="tool-section">
+            <h2>🔍 أدوات التحديد (Selection Tools)</h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">     </span>
+                 
+                    <div class="tool-name">أداة التحديد المستطيل (Rectangular Marquee)</div>
+                    <img src="images/Rectangular_Marquee.png" width="266" height="112" alt="أداة التحديد المستطيل (Rectangular Marquee)"> 
+         
+                     <div class="tool-description">
+                        تستخدم لتحديد مناطق مستطيلة في الصورة. يمكن استخدامها لقص أجزاء من الصورة أو تطبيق تأثيرات على مناطق محددة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لإنشاء تحديد مستطيل</div>
+                    <span class="shortcut">M</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon"></span>
+                    <div class="tool-name">أداة التحديد البيضاوي (Elliptical Marquee)</div>
+                    <div class="tool-description">
+                        تستخدم لتحديد مناطق دائرية أو بيضاوية. مفيدة لإنشاء تحديدات دائرية أو قص أجزاء دائرية من الصورة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لإنشاء تحديد بيضاوي</div>
+                    <span class="shortcut"></span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon"></span>
+                     
+                    <div class="tool-name">أداة الحبل السحري (Magic Wand)</div>
+                    <img src="images/MagicWand.png" width="266" height="112" alt="أداة التحديد المستطيل (Rectangular Marquee)"> 
+        
+                    <div class="tool-description">
+                        تحدد تلقائياً مناطق متشابهة في اللون أو السطوع. مفيدة لتحديد خلفيات متجانسة أو أجزاء متشابهة اللون.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر على المنطقة المراد تحديدها</div>
+                    <span class="shortcut"></span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon"></span>
+                    <div class="tool-name">أداة التحديد السريع (Quick Selection)</div>
+                    <div class="tool-description">
+                        تحدد تلقائياً الكائنات والأشكال في الصورة. تعمل بشكل ذكي لتتبع حدود الكائنات.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب فوق الكائن المراد تحديده</div>
+                    <span class="shortcut"></span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon"></span>
+                      <div class="tool-name">أداة القلم (Pen Tool)</div>
+                      <img src="images/PenTool.png" width="266" height="112" alt="أداة القلم (Pen Tool)"> 
+                    <div class="tool-description">
+                        تستخدم لإنشاء مسارات دقيقة وتحديدات معقدة. تعتبر من أقوى أدوات التحديد في الفوتوشوب.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر لإنشاء نقاط، اسحب لإنشاء منحنيات</div>
+                    <span class="shortcut">P</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon"></span>
+                    <div class="tool-name">أداة العصا السحرية (Lasso Tool)</div>
+                    <img src="images/LassoTool.png" width="266" height="112" alt="أداة العصا السحرية (Lasso Tool)"> 
+                    <div class="tool-description">
+                        تستخدم لتحديد مناطق حرة الشكل. تسمح برسم تحديدات يدوية حول أي شكل تريده.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم التحديد يدوياً</div>
+                    <span class="shortcut">L</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="brush-tools" class="tool-section">
+            <h2>🖌️ أدوات الرسم والطلاء (Brush Tools)</h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">🖌️</span>
+                    <div class="tool-name">أداة الفرشاة (Brush Tool)</div>
+                    <img src="images/BrushTool.png" width="266" height="112" alt="أداة الفرشاة (Brush Tool)"> 
+                    <div class="tool-description">
+                        الأداة الأساسية للرسم والطلاء. يمكن تخصيص حجمها وشكلها وشفافيتها لإنشاء تأثيرات مختلفة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب للرسم أو الطلاء</div>
+                    <span class="shortcut">B</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">✏️</span>
+                    <div class="tool-name">أداة القلم الرصاص (Pencil Tool)</div>
+                    <div class="tool-description">
+                        ترسم بخطوط حادة وواضحة بدون تدرج. مفيدة لإنشاء رسومات خطية أو إضافة تفاصيل حادة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب للرسم بخطوط حادة</div>
+                    <span class="shortcut">B</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🎨</span>
+                    <div class="tool-name">أداة التلوين (Paint Bucket)</div>
+                    <img src="images/PaintBucket.png" width="266" height="112" alt="أداة التلوين (Paint Bucket)"> 
+                    <div class="tool-description">
+                        تملأ المناطق المحددة بلون أو نمط معين. سريعة وفعالة لتلوين مناطق كبيرة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر على المنطقة المراد تلوينها</div>
+                    <span class="shortcut">G</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🖍️</span>
+                    <div class="tool-name">أداة التدرج (Gradient Tool)</div>
+                    <div class="tool-description">
+                        تنشئ تدرجات لونية جميلة بين لونين أو أكثر. يمكن استخدامها لإنشاء خلفيات أو تأثيرات بصرية.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لإنشاء التدرج</div>
+                    <span class="shortcut">G</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🧽</span>
+                    <div class="tool-name">أداة الممحاة (Eraser Tool)</div>
+                    <img src="images/EraserTool.png" width="266" height="112" alt="أداة الممحاة (Eraser Tool)"> 
+                    <div class="tool-description">
+                        تمحو أجزاء من الصورة أو الطبقة. يمكن تخصيص حجمها وشكلها حسب الحاجة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لمسح الأجزاء غير المرغوب فيها</div>
+                    <span class="shortcut">E</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔧</span>
+                    <div class="tool-name">أداة الإسفنجة (Sponge Tool)</div>
+                    <img src="images/SpongeTool.png" width="266" height="112" alt="أداة الإسفنجة (Sponge Tool)"> 
+                    <div class="tool-description">
+                        تزيد أو تقلل تشبع الألوان في المناطق المحددة. مفيدة لتحسين الألوان أو إنشاء تأثيرات خاصة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لتعديل تشبع الألوان</div>
+                    <span class="shortcut">O</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="text-tools" class="tool-section">
+             <h2>📝 أدوات النص (Text Tools)     <img src="images/TextTools.png" width="266" height="112" alt="أداة النص (Text Tool)"> 
+             </h2>
+             <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">T</span>
+                    <div class="tool-name">أداة النص الأفقي (Horizontal Type Tool)</div>
+                    <div class="tool-description">
+                        تضيف نصاً أفقياً إلى الصورة. يمكن تخصيص الخط والحجم واللون والخصائص الأخرى للنص.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر في المكان المراد إضافة النص فيه واكتب</div>
+                    <span class="shortcut">T</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">T</span>
+                    <div class="tool-name">أداة النص العمودي (Vertical Type Tool)</div>
+                    <div class="tool-description">
+                        تضيف نصاً عمودياً إلى الصورة. مفيدة للنصوص العربية أو اليابانية أو للتصميمات الخاصة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر في المكان المراد إضافة النص العمودي فيه</div>
+                    <span class="shortcut">T</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">📏</span>
+                    <div class="tool-name">أداة النص على المسار (Type on Path)</div>
+                    <img src="images/TypeOnPath.png" width="266" height="112" alt="أداة النص على المسار (Type on Path)"> 
+                    <div class="tool-description">
+                        تضع النص على مسار أو شكل محدد. تسمح بإنشاء نصوص منحنية أو متتبعة لأشكال معينة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر على المسار المراد وضع النص عليه</div>
+                    <span class="shortcut">T</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="shape-tools" class="tool-section">
+            <h2>🔷 أدوات الأشكال (Shape Tools)  <img src="images/RectangleTool.png" width="266" height="140" alt="أداة المستطيل (Rectangle Tool)"> 
+            </h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">⬜</span>
+                     <div class="tool-name">أداة المستطيل (Rectangle Tool)</div>
+                    <div class="tool-description">
+                        ترسم مستطيلات بأحجام مختلفة. يمكن تخصيص الزوايا والحدود والملء حسب الحاجة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم مستطيل</div>
+                    <span class="shortcut">U</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">⭕</span>
+                    <div class="tool-name">أداة الدائرة (Ellipse Tool)</div>
+                    <div class="tool-description">
+                        ترسم دوائر وأشكال بيضاوية. مفيدة لإنشاء أزرار أو عناصر دائرية في التصميم.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم دائرة أو شكل بيضاوي</div>
+                    <span class="shortcut">U</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔺</span>
+                    <div class="tool-name">أداة المضلع (Polygon Tool)</div>
+                    <div class="tool-description">
+                        ترسم مضلعات بأعداد مختلفة من الأضلاع. يمكن إنشاء مثلثات وخماسيات وسداسيات وغيرها.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم مضلع</div>
+                    <span class="shortcut">U</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">⭐</span>
+                    <div class="tool-name">أداة النجم (Star Tool)</div>
+                    <div class="tool-description">
+                        ترسم نجوم بأشكال مختلفة. يمكن تخصيص عدد الرؤوس وطولها وحدة الزوايا.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم نجمة</div>
+                    <span class="shortcut">U</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">💬</span>
+                    <div class="tool-name">أداة الخط (Line Tool)</div>
+                    <div class="tool-description">
+                        ترسم خطوطاً مستقيمة بأحجام مختلفة. يمكن تخصيص سمك الخط ونهاياته.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لرسم خط مستقيم</div>
+                    <span class="shortcut">U</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="navigation-tools" class="tool-section">
+            <h2>🧭 أدوات التنقل (Navigation Tools)</h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">✋</span>
+                    <div class="tool-name">أداة اليد (Hand Tool)</div>
+                    <div class="tool-description">
+                        تسمح بتحريك الصورة داخل نافذة العمل. مفيدة عند العمل على صور كبيرة أو تكبير الصورة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لتحريك الصورة</div>
+                    <span class="shortcut">H</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔍</span>
+                    <div class="tool-name">أداة التكبير (Zoom Tool)</div>
+                    <div class="tool-description">
+                        تكبر أو تصغر الصورة لرؤية التفاصيل أو الصورة كاملة. يمكن التكبير والتصغير بسهولة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر للتكبير، اضغط Alt وانقر للتصغير</div>
+                    <span class="shortcut">Z</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔄</span>
+                    <div class="tool-name">أداة التدوير (Rotate View Tool)</div>
+                    <div class="tool-description">
+                        تدير عرض الصورة دون تغيير الصورة نفسها. مفيدة للرسم بزوايا مختلفة أو العمل المريح.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لتدوير العرض</div>
+                    <span class="shortcut">R</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="color-tools" class="tool-section">
+            <h2>🎨 أدوات الألوان (Color Tools)</h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">🎯</span>
+                    <div class="tool-name">أداة قطارة الألوان (Eyedropper Tool)</div>
+                    <div class="tool-description">
+                        تختار ألواناً من الصورة لاستخدامها في الرسم أو التلوين. تسمح بنسخ الألوان بدقة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر على اللون المراد اختياره</div>
+                    <span class="shortcut">I</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🌈</span>
+                    <div class="tool-name">أداة استبدال الألوان (Color Replacement Tool)</div>
+                    <div class="tool-description">
+                        تستبدل لوناً محدداً بلون آخر مع الحفاظ على النسيج والتفاصيل الأصلية.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لاستبدال الألوان</div>
+                    <span class="shortcut">B</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🖌️</span>
+                    <div class="tool-name">أداة التصحيح (Healing Brush Tool)</div>
+                    <div class="tool-description">
+                        تصلح العيوب والعيوب في الصور بنسخ نسيج من منطقة صحية إلى المنطقة التالفة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط Alt وانقر على المنطقة المرجعية، ثم اضغط على العيب</div>
+                    <span class="shortcut">J</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔧</span>
+                    <div class="tool-name">أداة التصحيح المرقط (Spot Healing Brush)</div>
+                    <div class="tool-description">
+                        تصلح العيوب الصغيرة تلقائياً دون الحاجة لاختيار منطقة مرجعية.
+                    </div>
+                    <div class="tool-usage">الاستخدام: انقر على العيب مباشرة</div>
+                    <span class="shortcut">J</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="filter-tools" class="tool-section">
+            <h2>🔮 أدوات التصفية والتأثيرات (Filter Tools)</h2>
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <span class="tool-icon">🌊</span>
+                    <div class="tool-name">أداة التمويه (Blur Tool)</div>
+                    <div class="tool-description">
+                        تموه أجزاء من الصورة لإنشاء تأثيرات بصرية أو إخفاء التفاصيل غير المرغوب فيها.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب على المنطقة المراد تمويهها</div>
+                    <span class="shortcut">R</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">✨</span>
+                    <div class="tool-name">أداة الحدة (Sharpen Tool)</div>
+                    <div class="tool-description">
+                        تزيد حدة التفاصيل في الصورة لتحسين الوضوح والتفاصيل.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب على المنطقة المراد زيادة حدة تفاصيلها</div>
+                    <span class="shortcut">R</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🌫️</span>
+                    <div class="tool-name">أداة الضبابية (Smudge Tool)</div>
+                    <div class="tool-description">
+                        تخلق تأثيرات ضبابية أو تمدد الألوان في الصورة لإنشاء تأثيرات فنية.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب لإنشاء تأثير الضبابية</div>
+                    <span class="shortcut">R</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">🔆</span>
+                    <div class="tool-name">أداة التعتيم (Burn Tool)</div>
+                    <div class="tool-description">
+                        تعتم أجزاء من الصورة لإنشاء ظلال أو تقليل السطوع في مناطق محددة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب على المنطقة المراد تعتيمها</div>
+                    <span class="shortcut">O</span>
+                </div>
+
+                <div class="tool-item">
+                    <span class="tool-icon">💡</span>
+                    <div class="tool-name">أداة التفتيح (Dodge Tool)</div>
+                    <div class="tool-description">
+                        تفتح أجزاء من الصورة لزيادة السطوع أو إنشاء إضاءة في مناطق محددة.
+                    </div>
+                    <div class="tool-usage">الاستخدام: اضغط واسحب على المنطقة المراد تفتيحها</div>
+                    <span class="shortcut">O</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>🎨 دليل شامل لأدوات Adobe Photoshop - تم إعداده باللغة العربية</p>
+            <p>💡 نصائح: استخدم الاختصارات لتسريع العمل، وجرب الأدوات المختلفة لاستكشاف إمكانياتها</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to tool items
+        document.querySelectorAll('.tool-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Add keyboard shortcuts info
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'k') {
+                alert('اختصارات لوحة المفاتيح:\n\nM - أدوات التحديد\nB - أدوات الرسم\nT - أدوات النص\nU - أدوات الأشكال\nH - أداة اليد\nZ - أداة التكبير\nI - قطارة الألوان\nJ - أدوات التصحيح\nO - أدوات التعديل\nR - أدوات التنقل');
+            }
+        });
+    </script>
+</body>
+</html>

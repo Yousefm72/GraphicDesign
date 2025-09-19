@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهام الفوتوشوب - المهمة الأولى</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .nav-icon {
+            font-size: 1.1em;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .task-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .task-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .task-header {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .task-header h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .task-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .task-objective {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .task-objective h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tools-needed {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .tools-needed h3 {
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .tool-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tool-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .tool-shortcut {
+            background: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .steps-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .steps-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .step-description {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .step-tip {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #1976d2;
+            border-right: 3px solid #2196f3;
+        }
+
+        .expected-result {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .expected-result h3 {
+            color: #9c27b0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .difficulty-level {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #e91e63;
+        }
+
+        .difficulty-level h4 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+
+        .difficulty-stars {
+            color: #ff9800;
+            font-size: 1.2em;
+        }
+
+        .time-estimate {
+            background: #e0f2f1;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #009688;
+        }
+
+        .time-estimate h4 {
+            color: #009688;
+            margin-bottom: 10px;
+        }
+
+        .tips-section {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #ff9800;
+        }
+
+        .tips-section h3 {
+            color: #ff9800;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-icon {
+            color: #ff9800;
+            margin-left: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tools-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 مهام الفوتوشوب </h1>
+            <p class="subtitle">تعلم الفوتوشوب من خلال المهام العملية والتطبيقية</p>
+        </header>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" class="nav-button">
+                <span class="nav-icon">🏠</span>
+                العودة للصفحة الرئيسية
+            </a>
+            <a href="task2.html" class="nav-button" style="background: linear-gradient(45deg, #e74c3c, #c0392b); margin-right: 15px;">
+                <span class="nav-icon">🔷</span>
+                المهمة الثانية - التصميم الهندسي
+            </a>
+        </div>
+
+        <section class="task-section">
+            <div class="task-header">
+                <div class="task-number">المهمة رقم 1</div>
+                <h2>🎨 إنشاء تصميم نصي ملون</h2>
+                <p>استخدام أدوات النص والألوان لإنشاء تصميم إبداعي</p>
+            </div>
+
+            <div class="task-objective">
+                <h3>🎯 الهدف من المهمة</h3>
+                <p>في هذه المهمة ستتعلم كيفية استخدام أدوات النص وأدوات الألوان في الفوتوشوب لإنشاء تصميم نصي جذاب ومتدرج الألوان. ستتعلم أساسيات إضافة النصوص وتنسيقها وتطبيق التدرجات اللونية عليها.</p>
+            </div>
+<center>
+          <img src="images/Task1.png" width="800 " height="600" alt="إنشاء تصميم نصي ملون"> 
+
+</center>
+
+       
+
+            <div class="steps-section">
+                <h3>📋 خطوات التنفيذ</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">إنشاء مستند جديد</div>
+                    <div class="step-description">
+                        افتح الفوتوشوب وأنشئ مستنداً جديداً بالضغط على Ctrl+N. اختر الأبعاد التالية:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>العرض: 800 بكسل</li>
+                            <li>الارتفاع: 600 بكسل</li>
+                            <li>الدقة: 72 بكسل/بوصة</li>
+                            <li>اللون: RGB</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: يمكنك تغيير لون الخلفية من اللون الأبيض إلى لون آخر حسب تفضيلك
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">إضافة النص الأساسي</div>
+                    <div class="step-description">
+                        اختر أداة النص (T) من شريط الأدوات. انقر في وسط المستند واكتب النص التالي: "مرحباً بالفوتوشوب"
+                        <br><br>
+                        في لوحة Character (يمكنك فتحها من Window > Character)، قم بتعديل:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>نوع الخط: Arial أو أي خط عربي</li>
+                            <li>حجم الخط: 48 نقطة</li>
+                            <li>اللون: أي لون تريده</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: تأكد من أن الخط يدعم اللغة العربية لظهور النص بشكل صحيح
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">تطبيق تدرج لوني على النص</div>
+                    <div class="step-description">
+                        تأكد من أن طبقة النص محددة. اضغط بزر الماوس الأيمن على طبقة النص واختر "Blending Options" أو "Layer Style". 
+                        <br><br>
+                        في النافذة التي تظهر:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>اختر "Gradient Overlay"</li>
+                            <li>انقر على التدرج لفتح Gradient Editor</li>
+                            <li>اختر ألوان متدرجة جميلة (مثل: أزرق إلى بنفسجي)</li>
+                            <li>اضبط الزاوية إلى 45 درجة</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: جرب تدرجات مختلفة مثل الأحمر إلى البرتقالي أو الأخضر إلى الأزرق
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">إضافة ظل للنص</div>
+                    <div class="step-description">
+                        في نفس نافذة Layer Style، اختر "Drop Shadow":
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>الشفافية: 75%</li>
+                            <li>المسافة: 5 بكسل</li>
+                            <li>الحجم: 10 بكسل</li>
+                            <li>الزاوية: 135 درجة</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: الظل يجعل النص يبدو أكثر وضوحاً وتميزاً عن الخلفية
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">إضافة نص إضافي</div>
+                    <div class="step-description">
+                        أضف نصاً آخر أسفل النص الأول: "تعلم التصميم خطوة بخطوة"
+                        <br><br>
+                        استخدم نفس الخط ولكن بحجم أصغر (24 نقطة) ولون مختلف. يمكنك استخدام أداة قطارة الألوان (I) لاختيار لون من التدرج المطبق على النص الأول.
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: استخدم أداة قطارة الألوان لضمان التناسق في الألوان
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-title">تطبيق تأثيرات إضافية</div>
+                    <div class="step-description">
+                        على النص الثاني، أضف تأثير "Stroke" من Layer Style:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>الحجم: 2 بكسل</li>
+                            <li>اللون: أبيض أو لون فاتح</li>
+                            <li>الموضع: Outside</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: الحدود تجعل النص أكثر وضوحاً وتميزاً
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <div class="step-title">حفظ العمل</div>
+                    <div class="step-description">
+                        احفظ عملك بالضغط على Ctrl+S. اختر اسم ملف مناسب مثل "النص_الملون_1.psd"
+                        <br><br>
+                        لحفظ نسخة للطباعة أو المشاركة، استخدم File > Export > Export As واختر صيغة JPG أو PNG.
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: احفظ دائماً نسخة PSD للتحرير المستقبلي ونسخة JPG للمشاركة
+                    </div>
+                </div>
+            </div>
+
+         
+
+          
+        </section>
+
+      
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add progress tracking
+        let completedSteps = 0;
+        const totalSteps = 7;
+
+        document.querySelectorAll('.step').forEach((step, index) => {
+            step.addEventListener('click', function() {
+                if (!this.classList.contains('completed')) {
+                    this.classList.add('completed');
+                    this.style.background = '#e8f5e8';
+                    this.style.borderLeft = '5px solid #27ae60';
+                    completedSteps++;
+                    
+                    if (completedSteps === totalSteps) {
+                        alert('🎉 تهانينا! لقد أكملت جميع خطوات المهمة بنجاح!');
+                    }
+                }
+            });
+        });
+
+        // Add keyboard shortcuts help
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'h') {
+                alert('اختصارات مفيدة:\n\nCtrl+N - مستند جديد\nCtrl+S - حفظ\nT - أداة النص\nI - قطارة الألوان\nG - أدوات التدرج والتلوين');
+            }
+        });
+    </script>
+</body>
+</html>

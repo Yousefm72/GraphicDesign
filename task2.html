@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهام الفوتوشوب - المهمة الثانية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .nav-icon {
+            font-size: 1.1em;
+        }
+
+        .task-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .task-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .task-header {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .task-header h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .task-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .task-objective {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .task-objective h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tools-needed {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .tools-needed h3 {
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .tool-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tool-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .tool-shortcut {
+            background: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .steps-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .steps-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #e74c3c;
+        }
+
+        .step-number {
+            background: #e74c3c;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .step-description {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .step-tip {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #1976d2;
+            border-right: 3px solid #2196f3;
+        }
+
+        .expected-result {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #9c27b0;
+        }
+
+        .expected-result h3 {
+            color: #9c27b0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .difficulty-level {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #e91e63;
+        }
+
+        .difficulty-level h4 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+
+        .difficulty-stars {
+            color: #ff9800;
+            font-size: 1.2em;
+        }
+
+        .time-estimate {
+            background: #e0f2f1;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #009688;
+        }
+
+        .time-estimate h4 {
+            color: #009688;
+            margin-bottom: 10px;
+        }
+
+        .tips-section {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #ff9800;
+        }
+
+        .tips-section h3 {
+            color: #ff9800;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-icon {
+            color: #ff9800;
+            margin-left: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .nav-button-bottom {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-button-bottom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tools-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 مهام الفوتوشوب</h1>
+            <p class="subtitle">تعلم الفوتوشوب من خلال المهام العملية والتطبيقية</p>
+        </header>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" class="nav-button">
+                <span class="nav-icon">🏠</span>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+
+        <section class="task-section">
+            <div class="task-header">
+                <div class="task-number">المهمة رقم 2</div>
+                <h2>🔷 إنشاء تصميم هندسي ملون</h2>
+                <p>استخدام أدوات المستطيل والألوان لإنشاء تصميم هندسي إبداعي</p>
+            </div>
+
+            <div class="task-objective">
+                <h3>🎯 الهدف من المهمة</h3>
+                <p>في هذه المهمة ستتعلم كيفية استخدام أدوات المستطيل وأدوات الألوان في الفوتوشوب لإنشاء تصميم هندسي جذاب ومتناسق الألوان. ستتعلم أساسيات رسم الأشكال الهندسية وتطبيق الألوان والتدرجات عليها.</p>
+            </div>
+
+          
+
+           
+
+            <div class="steps-section">
+                <h3>📋 خطوات التنفيذ</h3>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">إنشاء مستند جديد</div>
+                    <div class="step-description">
+                        افتح الفوتوشوب وأنشئ مستنداً جديداً بالضغط على Ctrl+N. اختر الأبعاد التالية:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>العرض: 1000 بكسل</li>
+                            <li>الارتفاع: 800 بكسل</li>
+                            <li>الدقة: 72 بكسل/بوصة</li>
+                            <li>اللون: RGB</li>
+                            <li>الخلفية: أبيض</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: يمكنك تغيير لون الخلفية إلى لون رمادي فاتح للحصول على تباين أفضل مع الألوان الزاهية
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">إعداد لوحة الألوان</div>
+                    <div class="step-description">
+                        افتح لوحة الألوان من Window > Color أو اضغط F6. اختر مجموعة ألوان متناسقة:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>الأزرق: #3498db</li>
+                            <li>الأخضر: #2ecc71</li>
+                            <li>البرتقالي: #f39c12</li>
+                            <li>البنفسجي: #9b59b6</li>
+                            <li>الأحمر: #e74c3c</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: استخدم ألوان متكاملة أو متدرجة لضمان التناسق البصري في التصميم
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">رسم المستطيل الأول</div>
+                    <div class="step-description">
+                        اختر أداة المستطيل (U) من شريط الأدوات. في شريط الخيارات العلوي، تأكد من أن الوضع مضبوط على "Shape" وليس "Path" أو "Pixels".
+                        <br><br>
+                        ارسم مستطيلاً كبيراً في وسط الصورة:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>الحجم: 400 × 200 بكسل</li>
+                            <li>اللون: أزرق (#3498db)</li>
+                            <li>الحدود: بدون حدود</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: اضغط Shift أثناء الرسم للحصول على مستطيل مثالي (نسبة 1:1)
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">إضافة مستطيلات متداخلة</div>
+                    <div class="step-description">
+                        أضف مستطيلات أصغر بألوان مختلفة داخل المستطيل الأول:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>مستطيل أخضر: 200 × 100 بكسل</li>
+                            <li>مستطيل برتقالي: 150 × 80 بكسل</li>
+                            <li>مستطيل بنفسجي: 100 × 60 بكسل</li>
+                        </ul>
+                        رتب المستطيلات بحيث تكون متداخلة ومتناسقة بصرياً.
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: استخدم أدوات المحاذاة (Align) لترتيب المستطيلات بدقة
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">تطبيق تدرجات لونية</div>
+                    <div class="step-description">
+                        اختر أحد المستطيلات واضغط بزر الماوس الأيمن واختر "Blending Options". أضف "Gradient Overlay":
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>اختر تدرج من لونين متكاملين</li>
+                            <li>اضبط الزاوية إلى 45 درجة</li>
+                            <li>غير نمط المزج إلى "Overlay"</li>
+                            <li>اضبط الشفافية إلى 80%</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: جرب تدرجات مختلفة على كل مستطيل لإنشاء تأثيرات بصرية متنوعة
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-title">إضافة ظلال وتأثيرات</div>
+                    <div class="step-description">
+                        أضف تأثيرات بصرية للمستطيلات:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>Drop Shadow: مسافة 5 بكسل، حجم 10 بكسل</li>
+                            <li>Inner Shadow: مسافة 3 بكسل، حجم 5 بكسل</li>
+                            <li>Bevel & Emboss: عمق 100%، حجم 5 بكسل</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: لا تفرط في استخدام التأثيرات، اختر تأثيرين أو ثلاثة فقط للحصول على مظهر أنيق
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <div class="step-title">إضافة عناصر زخرفية</div>
+                    <div class="step-description">
+                        أضف مستطيلات صغيرة كعناصر زخرفية:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>مستطيلات صغيرة في الزوايا</li>
+                            <li>ألوان متدرجة من الفاتح إلى الغامق</li>
+                            <li>حدود رفيعة بلون أبيض أو أسود</li>
+                            <li>شفافية 70% للعناصر الزخرفية</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: استخدم العناصر الزخرفية لتوازن التصميم وإضافة تفاصيل مثيرة للاهتمام
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">8</div>
+                    <div class="step-title">تنظيم الطبقات</div>
+                    <div class="step-description">
+                        نظم طبقاتك في لوحة Layers:
+                        <ul style="margin-top: 10px; margin-right: 20px;">
+                            <li>أعطِ كل طبقة اسماً واضحاً</li>
+                            <li>اجمع الطبقات المتشابهة في Groups</li>
+                            <li>اضبط ترتيب الطبقات حسب الأولوية</li>
+                            <li>احفظ نسخة من التصميم الأصلي</li>
+                        </ul>
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: التنظيم الجيد للطبقات يوفر الوقت ويسهل التعديل المستقبلي
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">9</div>
+                    <div class="step-title">حفظ العمل</div>
+                    <div class="step-description">
+                        احفظ عملك بالضغط على Ctrl+S. اختر اسم ملف مناسب مثل "التصميم_الهندسي_2.psd"
+                        <br><br>
+                        لحفظ نسخة للطباعة أو المشاركة، استخدم File > Export > Export As واختر صيغة JPG أو PNG.
+                    </div>
+                    <div class="step-tip">
+                        💡 نصيحة: احفظ دائماً نسخة PSD للتحرير المستقبلي ونسخة JPG للمشاركة
+                    </div>
+                </div>
+            </div>
+
+           
+
+        <div class="navigation">
+            <a href="Tasks.html" class="nav-button-bottom">📋 العودة للمهام</a>
+            <a href="tools.html" class="nav-button-bottom">🛠️ أدوات الفوتوشوب</a>
+            <a href="index.html" class="nav-button-bottom">🏠 الصفحة الرئيسية</a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add progress tracking
+        let completedSteps = 0;
+        const totalSteps = 9;
+
+        document.querySelectorAll('.step').forEach((step, index) => {
+            step.addEventListener('click', function() {
+                if (!this.classList.contains('completed')) {
+                    this.classList.add('completed');
+                    this.style.background = '#e8f5e8';
+                    this.style.borderLeft = '5px solid #27ae60';
+                    completedSteps++;
+                    
+                    if (completedSteps === totalSteps) {
+                        alert('🎉 تهانينا! لقد أكملت جميع خطوات المهمة الثانية بنجاح!');
+                    }
+                }
+            });
+        });
+
+        // Add keyboard shortcuts help
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'h') {
+                alert('اختصارات مفيدة:\n\nCtrl+N - مستند جديد\nCtrl+S - حفظ\nU - أدوات الأشكال\nI - قطارة الألوان\nG - أدوات التدرج\nF6 - لوحة الألوان');
+            }
+        });
+    </script>
+</body>
+</html>
