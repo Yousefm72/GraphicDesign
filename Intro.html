@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقدمة في التصميم الجرافيكي - أساسيات التصميم</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .intro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 50px;
+            background: white;
+        }
+        
+        .intro-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .intro-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .intro-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+        
+        .subsection {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .subsection h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subsection p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .subsection ul {
+            margin-right: 1.5rem;
+            color: #555;
+        }
+        
+        .subsection li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .highlight-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .icon {
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .intro-container {
+                padding: 80px 15px 30px;
+            }
+            
+            .intro-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+        <a href="index.html" class="back-button">
+            <span class="icon">←</span>
+            العودة للصفحة الرئيسية
+        </a>
+        
+        <div class="intro-header">
+            <h1>مقدمة في التصميم الجرافيكي</h1>
+            <p>دليل شامل لأساسيات التصميم الجرافيكي والمفاهيم الأساسية</p>
+        </div>
+
+        <!-- Section 1: Visual Design Theory -->
+        <div class="content-section">
+            <h2 class="section-title">1. أساسيات نظرية التصميم البصري</h2>
+            
+            <div class="subsection">
+                <h3>أنواع الألوان</h3>
+                <p>الألوان هي العنصر الأساسي في التصميم الجرافيكي وتنقسم إلى عدة أنواع:</p>
+                <ul>
+                    <li><strong>الألوان الأساسية:</strong> الأحمر، الأزرق، الأصفر - لا يمكن الحصول عليها من مزج ألوان أخرى</li>
+                    <li><strong>الألوان الثانوية:</strong> الأخضر، البنفسجي، البرتقالي - تنتج من مزج الألوان الأساسية</li>
+                    <li><strong>الألوان الثلاثية:</strong> تنتج من مزج لون أساسي مع لون ثانوي</li>
+                    <li><strong>الألوان المتكاملة:</strong> ألوان متقابلة في دائرة الألوان تخلق تبايناً قوياً</li>
+                    <li><strong>الألوان المتناسقة:</strong> ألوان متجاورة في دائرة الألوان تخلق انسجاماً بصرياً</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>نصيحة مهمة:</h4>
+                    <p>استخدم دائرة الألوان كمرجع أساسي لاختيار الألوان المناسبة في تصميماتك. الألوان المتكاملة مثالية للعناوين والتركيز، بينما الألوان المتناسقة مناسبة للخلفيات والعناصر الثانوية.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>الحجم والمساحة</h3>
+                <p>الحجم والمساحة يلعبان دوراً مهماً في خلق التوازن البصري:</p>
+                <ul>
+                    <li><strong>الحجم النسبي:</strong> مقارنة أحجام العناصر المختلفة لإبراز الأهمية</li>
+                    <li><strong>المساحة السلبية:</strong> المساحات الفارغة التي تساعد في تنظيم التصميم</li>
+                    <li><strong>التدرج الحجمي:</strong> استخدام أحجام مختلفة لخلق إيقاع بصري</li>
+                    <li><strong>التوازن:</strong> توزيع العناصر بشكل متوازن في التصميم</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>الأشكال</h3>
+                <p>الأشكال تنقل معاني مختلفة وتؤثر على إدراك المشاهد:</p>
+                <ul>
+                    <li><strong>الأشكال الهندسية:</strong> المربع، المثلث، الدائرة - تعطي إحساساً بالاستقرار والقوة</li>
+                    <li><strong>الأشكال العضوية:</strong> أشكال طبيعية غير منتظمة - تعطي إحساساً بالمرونة والحيوية</li>
+                    <li><strong>الأشكال المجردة:</strong> أشكال مبسطة ومجردة - تعطي إحساساً بالحداثة والبساطة</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>الخطوط</h3>
+                <p>الخطوط توجه العين وتنقل المشاعر:</p>
+                <ul>
+                    <li><strong>الخطوط المستقيمة:</strong> تعطي إحساساً بالاستقرار والقوة</li>
+                    <li><strong>الخطوط المنحنية:</strong> تعطي إحساساً بالمرونة والأناقة</li>
+                    <li><strong>الخطوط المكسورة:</strong> تعطي إحساساً بالطاقة والحركة</li>
+                    <li><strong>سمك الخط:</strong> الخطوط السميكة تعطي قوة، والرفيعة تعطي أناقة</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>التكوين</h3>
+                <p>التكوين هو ترتيب العناصر في التصميم:</p>
+                <ul>
+                    <li><strong>قاعدة الأثلاث:</strong> تقسيم التصميم إلى 9 أجزاء متساوية ووضع العناصر المهمة عند نقاط التقاطع</li>
+                    <li><strong>التوازن المتماثل:</strong> توزيع العناصر بشكل متساوٍ حول المحور المركزي</li>
+                    <li><strong>التوازن غير المتماثل:</strong> استخدام أحجام وأوزان مختلفة لخلق توازن بصري</li>
+                    <li><strong>التدرج:</strong> ترتيب العناصر من الأكبر إلى الأصغر أو من الأغمق إلى الأفتح</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Basic Graphics Concepts -->
+        <div class="content-section">
+            <h2 class="section-title">2. المفاهيم الأساسية في الرسوميات</h2>
+            
+            <div class="subsection">
+                <h3>البكسل والرسوميات النقطية</h3>
+                <p>البكسل هو أصغر وحدة في الصورة الرقمية:</p>
+                <ul>
+                    <li><strong>البكسل (Pixel):</strong> نقطة صغيرة تحمل معلومات اللون والسطوع</li>
+                    <li><strong>الرسوميات النقطية (Raster Graphics):</strong> صور مكونة من شبكة من البكسلات</li>
+                    <li><strong>الرسوميات البت ماب (Bitmap):</strong> نوع من الرسوميات النقطية حيث كل بكسل له قيمة محددة</li>
+                    <li><strong>معدل البكسل:</strong> عدد البكسلات في البوصة الواحدة (PPI)</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>مميزات الرسوميات النقطية:</h4>
+                    <p>مناسبة للصور الفوتوغرافية والرسوم المعقدة، تدعم تأثيرات بصرية متقدمة، ولكنها تفقد جودتها عند التكبير.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>الرسوميات المتجهة</h3>
+                <p>الرسوميات المتجهة تستخدم المعادلات الرياضية لرسم الأشكال:</p>
+                <ul>
+                    <li><strong>النقاط:</strong> نقاط محددة الإحداثيات</li>
+                    <li><strong>الخطوط:</strong> خطوط تربط بين النقاط</li>
+                    <li><strong>المنحنيات:</strong> خطوط منحنية باستخدام نقاط التحكم</li>
+                    <li><strong>الأشكال:</strong> أشكال مغلقة مكونة من خطوط ومنحنيات</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>مميزات الرسوميات المتجهة:</h4>
+                    <p>قابلة للتكبير دون فقدان الجودة، أحجام ملفات صغيرة، مناسبة للشعارات والرسوم التوضيحية.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>الدقة (Resolution)</h3>
+                <p>الدقة تحدد جودة الصورة ووضوحها:</p>
+                <ul>
+                    <li><strong>دقة الشاشة:</strong> عادة 72-96 PPI للعرض على الشاشات</li>
+                    <li><strong>دقة الطباعة:</strong> عادة 300 DPI للطباعة عالية الجودة</li>
+                    <li><strong>DPI (Dots Per Inch):</strong> عدد النقاط في البوصة الواحدة للطباعة</li>
+                    <li><strong>PPI (Pixels Per Inch):</strong> عدد البكسلات في البوصة الواحدة للعرض</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3: Color Profiles -->
+        <div class="content-section">
+            <h2 class="section-title">3. ملفات الألوان</h2>
+            
+            <div class="subsection">
+                <h3>نظام RGB</h3>
+                <p>نظام الألوان المضافة المستخدم في الشاشات:</p>
+                <ul>
+                    <li><strong>الأحمر (Red):</strong> لون أساسي في النظام</li>
+                    <li><strong>الأخضر (Green):</strong> لون أساسي في النظام</li>
+                    <li><strong>الأزرق (Blue):</strong> لون أساسي في النظام</li>
+                    <li><strong>الاستخدام:</strong> الشاشات، التلفزيون، الكاميرات الرقمية</li>
+                    <li><strong>المجال:</strong> 0-255 لكل لون أساسي</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>مميزات RGB:</h4>
+                    <p>مناسب للعرض الرقمي، ألوان زاهية ومشرقة، يستخدم في تصميم المواقع والتطبيقات.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>نظام CMYK</h3>
+                <p>نظام الألوان الطرحية المستخدم في الطباعة:</p>
+                <ul>
+                    <li><strong>السيان (Cyan):</strong> لون أساسي في النظام</li>
+                    <li><strong>الماجنتا (Magenta):</strong> لون أساسي في النظام</li>
+                    <li><strong>الأصفر (Yellow):</strong> لون أساسي في النظام</li>
+                    <li><strong>الأسود (Key/Black):</strong> لون إضافي لتحسين التباين</li>
+                    <li><strong>الاستخدام:</strong> الطباعة، المطابع، المواد المطبوعة</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>مميزات CMYK:</h4>
+                    <p>مناسب للطباعة، ألوان دقيقة ومطابقة للمطبوعات، يستخدم في تصميم المواد المطبوعة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: File Formats -->
+        <div class="content-section">
+            <h2 class="section-title">4. أنواع الملفات واختلافاتها</h2>
+            
+            <div class="subsection">
+                <h3>ملفات التصميم الأصلية</h3>
+                <ul>
+                    <li><strong>PSD (Photoshop Document):</strong> ملف فوتوشوب الأصلي، يحتفظ بجميع الطبقات والتأثيرات</li>
+                    <li><strong>AI (Adobe Illustrator):</strong> ملف إليستريتور الأصلي، مناسب للرسوم المتجهة</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>ملفات الصور</h3>
+                <ul>
+                    <li><strong>JPG/JPEG:</strong> مناسب للصور الفوتوغرافية، ضغط عالي، لا يدعم الشفافية</li>
+                    <li><strong>PNG:</strong> يدعم الشفافية، ضغط بدون فقدان، مناسب للرسوم والرسوم البيانية</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>ملفات أخرى</h3>
+                <ul>
+                    <li><strong>PDF:</strong> مناسب للطباعة والمشاركة، يحافظ على التنسيق عبر الأنظمة المختلفة</li>
+                    <li><strong>SVG:</strong> رسوم متجهة قابلة للتكبير، مناسب للويب والطباعة</li>
+                </ul>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>نوع الملف</th>
+                        <th>الاستخدام</th>
+                        <th>المميزات</th>
+                        <th>العيوب</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PSD</td>
+                        <td>التصميم والتحرير</td>
+                        <td>يحتفظ بالطبقات والتأثيرات</td>
+                        <td>حجم كبير، يحتاج فوتوشوب</td>
+                    </tr>
+                    <tr>
+                        <td>JPG</td>
+                        <td>الصور الفوتوغرافية</td>
+                        <td>حجم صغير، متوافق عالمياً</td>
+                        <td>لا يدعم الشفافية، ضغط مع فقدان</td>
+                    </tr>
+                    <tr>
+                        <td>PNG</td>
+                        <td>الرسوم والرسوم البيانية</td>
+                        <td>يدعم الشفافية، ضغط بدون فقدان</td>
+                        <td>حجم أكبر من JPG</td>
+                    </tr>
+                    <tr>
+                        <td>PDF</td>
+                        <td>الطباعة والمشاركة</td>
+                        <td>متوافق عالمياً، يحافظ على التنسيق</td>
+                        <td>صعوبة التحرير</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 5: Photoshop vs Illustrator -->
+        <div class="content-section">
+            <h2 class="section-title">5. الفرق بين فوتوشوب وإليستريتور</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>المقارنة</th>
+                        <th>فوتوشوب (Photoshop)</th>
+                        <th>إليستريتور (Illustrator)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>نوع الرسوميات</td>
+                        <td>رسوميات نقطية (Raster)</td>
+                        <td>رسوميات متجهة (Vector)</td>
+                    </tr>
+                    <tr>
+                        <td>الاستخدام الرئيسي</td>
+                        <td>تحرير الصور والتصوير الفوتوغرافي</td>
+                        <td>الرسوم التوضيحية والشعارات</td>
+                    </tr>
+                    <tr>
+                        <td>التكبير</td>
+                        <td>يفقد الجودة عند التكبير</td>
+                        <td>يحافظ على الجودة عند التكبير</td>
+                    </tr>
+                    <tr>
+                        <td>حجم الملف</td>
+                        <td>ملفات كبيرة الحجم</td>
+                        <td>ملفات صغيرة نسبياً</td>
+                    </tr>
+                    <tr>
+                        <td>الطبقات</td>
+                        <td>يدعم طبقات معقدة</td>
+                        <td>يدعم طبقات بسيطة</td>
+                    </tr>
+                    <tr>
+                        <td>التأثيرات</td>
+                        <td>تأثيرات بصرية متقدمة</td>
+                        <td>تأثيرات أساسية</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="subsection">
+                <h3>متى تستخدم فوتوشوب؟</h3>
+                <ul>
+                    <li>تحرير الصور الفوتوغرافية</li>
+                    <li>إنشاء التصاميم المعقدة</li>
+                    <li>تطبيق التأثيرات البصرية</li>
+                    <li>تصميم واجهات المواقع</li>
+                    <li>معالجة الألوان والإضاءة</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>متى تستخدم إليستريتور؟</h3>
+                <ul>
+                    <li>تصميم الشعارات</li>
+                    <li>الرسوم التوضيحية</li>
+                    <li>التصميم الطباعي</li>
+                    <li>الرسوم البيانية</li>
+                    <li>التصاميم التي تحتاج تكبير</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 6: Printing Guide -->
+        <div class="content-section">
+            <h2 class="section-title">6. التصدير للمطبعة</h2>
+            
+            <div class="subsection">
+                <h3>أنواع الورق وأحجامه</h3>
+                <ul>
+                    <li><strong>الورق العادي:</strong> مناسب للطباعة اليومية، سعر معقول</li>
+                    <li><strong>الورق المقوى:</strong> سمك أكبر، مناسب للبطاقات والغلاف</li>
+                    <li><strong>الورق اللامع:</strong> سطح لامع، مناسب للصور الملونة</li>
+                    <li><strong>الورق غير اللامع:</strong> سطح مطفى، مناسب للنصوص</li>
+                    <li><strong>الورق المطفي:</strong> سطح ناعم، مناسب للطباعة الفاخرة</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>الأحجام القياسية:</h4>
+                    <p>A4 (210×297 مم) - A3 (297×420 مم) - A2 (420×594 مم) - A1 (594×841 مم) - A0 (841×1189 مم)</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>أنواع الطباعة والأغلفة</h3>
+                <ul>
+                    <li><strong>الطباعة الرقمية:</strong> سريعة ومناسبة للكميات الصغيرة</li>
+                    <li><strong>الطباعة الأوفست:</strong> عالية الجودة ومناسبة للكميات الكبيرة</li>
+                    <li><strong>الطباعة بالليزر:</strong> دقيقة ومناسبة للمستندات</li>
+                    <li><strong>الطباعة بالحبر:</strong> ألوان زاهية ومناسبة للصور</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>نصائح للتصدير للمطبعة</h3>
+                <ul>
+                    <li>استخدم نظام ألوان CMYK للطباعة</li>
+                    <li>تأكد من أن الدقة 300 DPI على الأقل</li>
+                    <li>أضف مساحة قص (Bleed) 3-5 مم</li>
+                    <li>احفظ الملف بصيغة PDF عالية الجودة</li>
+                    <li>تأكد من تحويل الخطوط إلى منحنيات</li>
+                    <li>استخدم الألوان المسطحة (Spot Colors) عند الحاجة</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>تحذير مهم:</h4>
+                    <p>تأكد دائماً من مراجعة الملف النهائي قبل الإرسال للمطبعة، واطلب عينة طباعة للتحقق من الألوان والجودة.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-button">
+                <span class="icon">←</span>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+    </div>
+</body>
+</html>
