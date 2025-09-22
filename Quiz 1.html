@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار التصميم الجرافيكي - اختبار 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .nav-icon {
+            font-size: 1.1em;
+        }
+
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-right: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .question:hover {
+            background: #e3f2fd;
+            transform: translateX(-5px);
+        }
+
+        .question-number {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+
+        .option {
+            background: white;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .option:hover {
+            border-color: #3498db;
+            background: #f8f9fa;
+        }
+
+        .option.selected {
+            border-color: #3498db;
+            background: #e3f2fd;
+        }
+
+        .option.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+        }
+
+        .option.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+        }
+
+        .option input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .option label {
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            font-weight: 500;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .submit-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .results {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .feedback {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .restart-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .restart-btn:hover {
+            background: white;
+            color: #27ae60;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .timer {
+            background: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .question {
+                padding: 20px;
+            }
+            
+            .question-text {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 اختبار التصميم الجرافيكي</h1>
+            <p class="subtitle">اختبار شامل حول أساسيات التصميم الجرافيكي والمفاهيم الأساسية</p>
+        </header>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" class="nav-button">
+                <span class="nav-icon">🏠</span>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+
+        <div class="quiz-container">
+            <div class="timer" id="timer">⏰ الوقت المتبقي: 15:00</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+
+            <form id="quizForm">
+                <!-- Question 1 -->
+                <div class="question">
+                    <div class="question-number">1</div>
+                    <div class="question-text">ما هي الألوان الأساسية في التصميم الجرافيكي؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q1" value="a" id="q1a">
+                            <label for="q1a">الأحمر، الأزرق، الأصفر</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q1" value="b" id="q1b">
+                            <label for="q1b">الأخضر، البنفسجي، البرتقالي</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q1" value="c" id="q1c">
+                            <label for="q1c">السيان، الماجنتا، الأصفر</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q1" value="d" id="q1d">
+                            <label for="q1d">الأبيض، الأسود، الرمادي</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question">
+                    <div class="question-number">2</div>
+                    <div class="question-text">ما هو نظام الألوان المستخدم في الشاشات الرقمية؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q2" value="a" id="q2a">
+                            <label for="q2a">CMYK</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q2" value="b" id="q2b">
+                            <label for="q2b">RGB</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q2" value="c" id="q2c">
+                            <label for="q2c">HSV</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q2" value="d" id="q2d">
+                            <label for="q2d">LAB</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question">
+                    <div class="question-number">3</div>
+                    <div class="question-text">ما هو أصغر وحدة في الصورة الرقمية؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q3" value="a" id="q3a">
+                            <label for="q3a">النقطة</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q3" value="b" id="q3b">
+                            <label for="q3b">البكسل</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q3" value="c" id="q3c">
+                            <label for="q3c">الخط</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q3" value="d" id="q3d">
+                            <label for="q3d">الشكل</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question">
+                    <div class="question-number">4</div>
+                    <div class="question-text">ما هو نظام الألوان المستخدم في الطباعة؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q4" value="a" id="q4a">
+                            <label for="q4a">RGB</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q4" value="b" id="q4b">
+                            <label for="q4b">CMYK</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q4" value="c" id="q4c">
+                            <label for="q4c">HSV</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q4" value="d" id="q4d">
+                            <label for="q4d">LAB</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question">
+                    <div class="question-number">5</div>
+                    <div class="question-text">ما هي الدقة المناسبة للطباعة عالية الجودة؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q5" value="a" id="q5a">
+                            <label for="q5a">72 DPI</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q5" value="b" id="q5b">
+                            <label for="q5b">150 DPI</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q5" value="c" id="q5c">
+                            <label for="q5c">300 DPI</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q5" value="d" id="q5d">
+                            <label for="q5d">600 DPI</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question">
+                    <div class="question-number">6</div>
+                    <div class="question-text">أي من الملفات التالية يدعم الشفافية؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q6" value="a" id="q6a">
+                            <label for="q6a">JPG</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q6" value="b" id="q6b">
+                            <label for="q6b">PNG</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q6" value="c" id="q6c">
+                            <label for="q6c">BMP</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q6" value="d" id="q6d">
+                            <label for="q6d">GIF</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question">
+                    <div class="question-number">7</div>
+                    <div class="question-text">ما هو الفرق الرئيسي بين فوتوشوب وإليستريتور؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q7" value="a" id="q7a">
+                            <label for="q7a">فوتوشوب للرسوميات النقطية، إليستريتور للرسوميات المتجهة</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q7" value="b" id="q7b">
+                            <label for="q7b">فوتوشوب للرسوميات المتجهة، إليستريتور للرسوميات النقطية</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q7" value="c" id="q7c">
+                            <label for="q7c">لا يوجد فرق بينهما</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q7" value="d" id="q7d">
+                            <label for="q7d">فوتوشوب أسرع من إليستريتور</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question">
+                    <div class="question-number">8</div>
+                    <div class="question-text">ما هي قاعدة الأثلاث في التصميم؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q8" value="a" id="q8a">
+                            <label for="q8a">استخدام ثلاثة ألوان فقط في التصميم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q8" value="b" id="q8b">
+                            <label for="q8b">تقسيم التصميم إلى 9 أجزاء متساوية ووضع العناصر المهمة عند نقاط التقاطع</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q8" value="c" id="q8c">
+                            <label for="q8c">استخدام ثلاثة خطوط مختلفة</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q8" value="d" id="q8d">
+                            <label for="q8d">تطبيق ثلاثة تأثيرات على كل عنصر</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question">
+                    <div class="question-number">9</div>
+                    <div class="question-text">ما هو الحجم القياسي للورق A4؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q9" value="a" id="q9a">
+                            <label for="q9a">210×297 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q9" value="b" id="q9b">
+                            <label for="q9b">297×420 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q9" value="c" id="q9c">
+                            <label for="q9c">420×594 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q9" value="d" id="q9d">
+                            <label for="q9d">594×841 مم</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question">
+                    <div class="question-number">10</div>
+                    <div class="question-text">ما هي المساحة المضافة للقص (Bleed) في الطباعة؟</div>
+                    <ul class="options">
+                        <li class="option">
+                            <input type="radio" name="q10" value="a" id="q10a">
+                            <label for="q10a">1-2 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q10" value="b" id="q10b">
+                            <label for="q10b">3-5 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q10" value="c" id="q10c">
+                            <label for="q10c">10-15 مم</label>
+                        </li>
+                        <li class="option">
+                            <input type="radio" name="q10" value="d" id="q10d">
+                            <label for="q10d">20-25 مم</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">إرسال الإجابات</button>
+            </form>
+
+            <div class="results" id="results">
+                <h2>🎉 نتائج الاختبار</h2>
+                <div class="score" id="score">0/10</div>
+                <div class="feedback" id="feedback"></div>
+                <button class="restart-btn" onclick="restartQuiz()">إعادة الاختبار</button>
+                <a href="Intro.html" class="restart-btn">مراجعة المادة</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>📝 اختبار شامل حول أساسيات التصميم الجرافيكي - تم إعداده باللغة العربية</p>
+            <p>💡 نصائح: اقرأ الأسئلة بعناية واختر الإجابة الأكثر دقة</p>
+        </footer>
+    </div>
+
+    <script>
+        // Correct answers
+        const correctAnswers = {
+            q1: 'a', // الأحمر، الأزرق، الأصفر
+            q2: 'b', // RGB
+            q3: 'b', // البكسل
+            q4: 'b', // CMYK
+            q5: 'c', // 300 DPI
+            q6: 'b', // PNG
+            q7: 'a', // فوتوشوب للرسوميات النقطية، إليستريتور للرسوميات المتجهة
+            q8: 'b', // تقسيم التصميم إلى 9 أجزاء متساوية
+            q9: 'a', // 210×297 مم
+            q10: 'b' // 3-5 مم
+        };
+
+        // Timer functionality
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        const progressElement = document.getElementById('progress');
+        let timerInterval;
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `⏰ الوقت المتبقي: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            const progress = ((15 * 60 - timeLeft) / (15 * 60)) * 100;
+            progressElement.style.width = progress + '%';
+            
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                submitQuiz();
+            }
+            
+            timeLeft--;
+        }
+
+        // Start timer
+        timerInterval = setInterval(updateTimer, 1000);
+
+        // Add click handlers to options
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Remove selected class from siblings
+                this.parentElement.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+            });
+        });
+
+        // Submit quiz
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            
+            let score = 0;
+            const totalQuestions = 10;
+            
+            // Check answers and show results
+            Object.keys(correctAnswers).forEach(questionId => {
+                const selectedAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+                const correctAnswer = correctAnswers[questionId];
+                
+                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                    score++;
+                    // Highlight correct answer
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`).closest('.option');
+                    correctOption.classList.add('correct');
+                } else {
+                    // Highlight correct answer and incorrect selected answer
+                    const correctOption = document.querySelector(`input[name="${questionId}"][value="${correctAnswer}"]`).closest('.option');
+                    correctOption.classList.add('correct');
+                    
+                    if (selectedAnswer) {
+                        const incorrectOption = selectedAnswer.closest('.option');
+                        incorrectOption.classList.add('incorrect');
+                    }
+                }
+            });
+            
+            // Show results
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('score').textContent = `${score}/${totalQuestions}`;
+            
+            // Show feedback based on score
+            let feedback = '';
+            if (score === totalQuestions) {
+                feedback = '🎉 ممتاز! لقد حصلت على الدرجة الكاملة. أنت متقن لأساسيات التصميم الجرافيكي!';
+            } else if (score >= 8) {
+                feedback = '👏 جيد جداً! لديك فهم ممتاز لأساسيات التصميم الجرافيكي.';
+            } else if (score >= 6) {
+                feedback = '👍 جيد! لديك فهم جيد لأساسيات التصميم الجرافيكي، لكن يمكنك تحسين معرفتك أكثر.';
+            } else if (score >= 4) {
+                feedback = '📚 مقبول. يبدو أنك تحتاج لمراجعة المادة أكثر لفهم أساسيات التصميم الجرافيكي.';
+            } else {
+                feedback = '📖 تحتاج لمراجعة شاملة للمادة. ننصحك بقراءة مقدمة التصميم الجرافيكي مرة أخرى.';
+            }
+            
+            document.getElementById('feedback').textContent = feedback;
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            location.reload();
+        }
+
+        // Form submission
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitQuiz();
+        });
+
+        // Disable submit button initially
+        document.getElementById('submitBtn').disabled = true;
+
+        // Enable submit button when all questions are answered
+        function checkAllAnswered() {
+            const allQuestions = document.querySelectorAll('input[type="radio"]');
+            const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked');
+            
+            if (answeredQuestions.length === 10) {
+                document.getElementById('submitBtn').disabled = false;
+            } else {
+                document.getElementById('submitBtn').disabled = true;
+            }
+        }
+
+        // Add event listeners to radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', checkAllAnswered);
+        });
+    </script>
+</body>
+</html>

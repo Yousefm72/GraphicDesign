@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أيقونات طبقة الأوامر - دليل شامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-links a {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .cmd-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cmd-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .cmd-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .cmd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cmd-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-right: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .cmd-item:hover {
+            background: #e3f2fd;
+            transform: translateX(-5px);
+        }
+
+        .cmd-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .cmd-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cmd-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .cmd-usage {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2e7d32;
+        }
+
+        .shortcut {
+            background: #fff3cd;
+            color: #856404;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+
+        .nav-icon {
+            font-size: 1.1em;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .cmd-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ أيقونات طبقة الأوامر</h1>
+            <p class="subtitle">دليل شامل لأيقونات طبقة الأوامر في Adobe Photoshop مع الشرح باللغة العربية</p>
+        </header>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" class="nav-button">
+                <span class="nav-icon">🏠</span>
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+
+        <div class="image-container">
+            <img src="Images/CmdLayer.png" alt="أيقونات طبقة الأوامر في الفوتوشوب">
+            <div class="image-caption">أيقونات طبقة الأوامر في Adobe Photoshop</div>
+        </div>
+
+        <nav class="nav-menu">
+            <h2>🔗 التنقل السريع</h2>
+            <div class="nav-links">
+                <a href="#layer-icons">أيقونات الطبقات</a>
+                <a href="#adjustment-icons">أيقونات التعديل</a>
+                <a href="#effect-icons">أيقونات التأثيرات</a>
+                <a href="#mask-icons">أيقونات الأقنعة</a>
+                <a href="#blend-icons">أيقونات المزج</a>
+                <a href="#opacity-icons">أيقونات الشفافية</a>
+                <a href="#color-modes">أنظمة الألوان</a>
+            </div>
+        </nav>
+            
+        <section id="layer-icons" class="cmd-section">
+            <h2>📚 أيقونات الطبقات الأساسية</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">📄</span>
+                    <div class="cmd-name">إنشاء طبقة جديدة (New Layer)</div>
+                    <div class="cmd-description">
+                        ينشئ طبقة جديدة فارغة فوق الطبقة المحددة حالياً. يمكن استخدامها لإضافة عناصر جديدة أو تأثيرات إضافية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة لإنشاء طبقة جديدة</div>
+                    <span class="shortcut">Ctrl+Shift+N</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🗑️</span>
+                    <div class="cmd-name">حذف الطبقة (Delete Layer)</div>
+                    <div class="cmd-description">
+                        يحذف الطبقة المحددة نهائياً من المشروع. تأكد من عدم الحاجة للطبقة قبل الحذف.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: حدد الطبقة وانقر على أيقونة الحذف</div>
+                    <span class="shortcut">Delete</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">👁️</span>
+                    <div class="cmd-name">إظهار/إخفاء الطبقة (Show/Hide Layer)</div>
+                    <div class="cmd-description">
+                        يتحكم في رؤية الطبقة. يمكن إخفاء الطبقات مؤقتاً لرؤية الطبقات الأخرى أو إظهارها عند الحاجة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة العين لإظهار أو إخفاء الطبقة</div>
+                    <span class="shortcut">انقر على العين</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔗</span>
+                    <div class="cmd-name">ربط الطبقات (Link Layers)</div>
+                    <div class="cmd-description">
+                        يربط طبقتين أو أكثر معاً بحيث تتحرك وتتحول معاً كوحدة واحدة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: حدد الطبقات وانقر على أيقونة الربط</div>
+                    <span class="shortcut">Ctrl+L</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">📁</span>
+                    <div class="cmd-name">إنشاء مجموعة طبقات (Create Group)</div>
+                    <div class="cmd-description">
+                        ينشئ مجلداً لتنظيم الطبقات المتشابهة معاً. مفيد لإدارة المشاريع المعقدة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة المجلد لإنشاء مجموعة جديدة</div>
+                    <span class="shortcut">Ctrl+G</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">📋</span>
+                    <div class="cmd-name">نسخ الطبقة (Duplicate Layer)</div>
+                    <div class="cmd-description">
+                        ينشئ نسخة مطابقة من الطبقة المحددة. مفيد لتجربة تأثيرات مختلفة أو إنشاء نسخ احتياطية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر بزر الماوس الأيمن واختر "Duplicate Layer"</div>
+                    <span class="shortcut">Ctrl+J</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="adjustment-icons" class="cmd-section">
+            <h2>🎛️ أيقونات طبقات التعديل</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">🌞</span>
+                    <div class="cmd-name">طبقة السطوع والتباين (Brightness/Contrast)</div>
+                    <div class="cmd-description">
+                        تعدل سطوع وتباين الصورة بشكل غير مدمر. يمكن تعديلها في أي وقت دون التأثير على الصورة الأصلية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وعدل القيم حسب الحاجة</div>
+                    <span class="shortcut">Layer > New Adjustment Layer</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🌈</span>
+                    <div class="cmd-name">طبقة التشبع (Hue/Saturation)</div>
+                    <div class="cmd-description">
+                        تعدل ألوان الصورة وتشبعها وتدرجها. مفيدة لتحسين الألوان أو إنشاء تأثيرات لونية خاصة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وعدل قيم الألوان</div>
+                    <span class="shortcut">Ctrl+U</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">⚖️</span>
+                    <div class="cmd-name">طبقة المستويات (Levels)</div>
+                    <div class="cmd-description">
+                        تعدل توزيع الألوان في الصورة لتحسين التباين والسطوع بشكل دقيق.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وعدل المنحنيات</div>
+                    <span class="shortcut">Ctrl+L</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">📈</span>
+                    <div class="cmd-name">طبقة المنحنيات (Curves)</div>
+                    <div class="cmd-description">
+                        تعدل توزيع الألوان باستخدام منحنيات دقيقة. تعتبر من أقوى أدوات التعديل في الفوتوشوب.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وارسم المنحنيات المطلوبة</div>
+                    <span class="shortcut">Ctrl+M</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">طبقة التدرج (Gradient Map)</div>
+                    <div class="cmd-description">
+                        تطبق تدرجاً لونياً على الصورة بناءً على قيم السطوع. مفيدة لإنشاء تأثيرات فنية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة واختر التدرج المطلوب</div>
+                    <span class="shortcut">Layer > New Adjustment Layer</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔍</span>
+                    <div class="cmd-name">طبقة التعرض (Exposure)</div>
+                    <div class="cmd-description">
+                        تعدل تعرض الصورة بشكل مشابه لكاميرا التصوير. مفيدة لتصحيح الصور المظلمة أو المضيئة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وعدل قيم التعرض</div>
+                    <span class="shortcut">Layer > New Adjustment Layer</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="effect-icons" class="cmd-section">
+            <h2>✨ أيقونات التأثيرات والمرشحات</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">🌊</span>
+                    <div class="cmd-name">طبقة التمويه (Blur)</div>
+                    <div class="cmd-description">
+                        تطبق تأثيرات تمويه مختلفة على الصورة مثل التمويه الغاوسي أو تمويه الحركة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة واختر نوع التمويه المطلوب</div>
+                    <span class="shortcut">Filter > Blur</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔆</span>
+                    <div class="cmd-name">طبقة الإضاءة (Lighting Effects)</div>
+                    <div class="cmd-description">
+                        تضيف تأثيرات إضاءة مختلفة على الصورة مثل الإضاءة النقطية أو الإضاءة المحيطة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وعدل إعدادات الإضاءة</div>
+                    <span class="shortcut">Filter > Render > Lighting Effects</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎭</span>
+                    <div class="cmd-name">طبقة الأنماط (Layer Styles)</div>
+                    <div class="cmd-description">
+                        تضيف تأثيرات بصرية مثل الظلال والتوهج والحدود على الطبقة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر بزر الماوس الأيمن واختر "Blending Options"</div>
+                    <span class="shortcut">انقر بزر الماوس الأيمن</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🖼️</span>
+                    <div class="cmd-name">طبقة الصورة الذكية (Smart Object)</div>
+                    <div class="cmd-description">
+                        تحول الطبقة إلى كائن ذكي يمكن تحريره دون فقدان الجودة أو إمكانية الرجوع للتعديلات.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر بزر الماوس الأيمن واختر "Convert to Smart Object"</div>
+                    <span class="shortcut">انقر بزر الماوس الأيمن</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔧</span>
+                    <div class="cmd-name">طبقة التصحيح (Healing)</div>
+                    <div class="cmd-description">
+                        تطبق أدوات التصحيح مثل أداة التصحيح المرقط أو فرشاة التصحيح على الطبقة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة واستخدم أدوات التصحيح</div>
+                    <span class="shortcut">J</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">طبقة الرسم (Paint Layer)</div>
+                    <div class="cmd-description">
+                        طبقة مخصصة للرسم والطلاء باستخدام أدوات الفرشاة والقلم الرصاص.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وابدأ الرسم</div>
+                    <span class="shortcut">B</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="mask-icons" class="cmd-section">
+            <h2>🎭 أيقونات الأقنعة</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎭</span>
+                    <div class="cmd-name">قناع الطبقة (Layer Mask)</div>
+                    <div class="cmd-description">
+                        يخفي أو يظهر أجزاء من الطبقة دون حذفها. يمكن تعديله في أي وقت باستخدام الفرشاة السوداء والبيضاء.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وارسم على القناع</div>
+                    <span class="shortcut">انقر على أيقونة القناع</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">✂️</span>
+                    <div class="cmd-name">قناع القطع (Clipping Mask)</div>
+                    <div class="cmd-description">
+                        يقطع الطبقة حسب شكل الطبقة السفلية. مفيد لإنشاء تأثيرات محددة الشكل.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر بزر الماوس الأيمن واختر "Create Clipping Mask"</div>
+                    <span class="shortcut">Ctrl+Alt+G</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔗</span>
+                    <div class="cmd-name">ربط القناع (Link Mask)</div>
+                    <div class="cmd-description">
+                        يربط القناع بالطبقة بحيث تتحرك معاً عند تحريك الطبقة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة الربط بين الطبقة والقناع</div>
+                    <span class="shortcut">انقر على أيقونة الربط</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">قناع التدرج (Gradient Mask)</div>
+                    <div class="cmd-description">
+                        ينشئ قناعاً باستخدام التدرج لإنشاء انتقالات ناعمة بين المناطق المرئية والمخفية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على الأيقونة وارسم تدرجاً على القناع</div>
+                    <span class="shortcut">G</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="blend-icons" class="cmd-section">
+            <h2>🔄 أيقونات أوضاع المزج</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">🌅</span>
+                    <div class="cmd-name">مزج الضوء الناعم (Soft Light)</div>
+                    <div class="cmd-description">
+                        يخلق تأثير إضاءة ناعمة على الطبقة السفلية. مفيد لإضافة إضاءة خفيفة أو تظليل.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Soft Light" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">☀️</span>
+                    <div class="cmd-name">مزج الضوء القوي (Hard Light)</div>
+                    <div class="cmd-description">
+                        يخلق تأثير إضاءة قوية على الطبقة السفلية. ينتج تبايناً عالياً وتأثيرات درامية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Hard Light" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">➕</span>
+                    <div class="cmd-name">مزج الإضافة (Add)</div>
+                    <div class="cmd-description">
+                        يضيف قيم الألوان للطبقة السفلية. ينتج ألواناً أكثر إشراقاً وتأثيرات لامعة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Linear Dodge (Add)" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">➖</span>
+                    <div class="cmd-name">مزج الطرح (Subtract)</div>
+                    <div class="cmd-description">
+                        يطرح قيم الألوان من الطبقة السفلية. ينتج ألواناً أكثر قتامة وتأثيرات مظلمة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Subtract" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">❌</span>
+                    <div class="cmd-name">مزج الضرب (Multiply)</div>
+                    <div class="cmd-description">
+                        يضرب قيم الألوان مع الطبقة السفلية. ينتج ألواناً أكثر قتامة وتأثيرات تظليل.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Multiply" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔆</span>
+                    <div class="cmd-name">مزج الشاش (Screen)</div>
+                    <div class="cmd-description">
+                        يفتح الطبقة السفلية ويخلق تأثيرات إضاءة. مفيد لإضافة إضاءة أو تفتيح الصور.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر "Screen" من قائمة أوضاع المزج</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="opacity-icons" class="cmd-section">
+            <h2>👻 أيقونات الشفافية والشفافية</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">👻</span>
+                    <div class="cmd-name">تعديل الشفافية (Opacity)</div>
+                    <div class="cmd-description">
+                        يتحكم في شفافية الطبقة من 0% (شفاف تماماً) إلى 100% (معتم تماماً). مفيد لإنشاء تأثيرات شفافة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: حرك شريط التمرير لتعديل الشفافية</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">تعديل التعبئة (Fill)</div>
+                    <div class="cmd-description">
+                        يتحكم في شفافية محتوى الطبقة فقط دون التأثير على التأثيرات المطبقة عليها مثل الظلال والتوهج.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: حرك شريط التمرير لتعديل التعبئة</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔒</span>
+                    <div class="cmd-name">قفل الشفافية (Lock Transparency)</div>
+                    <div class="cmd-description">
+                        يمنع الرسم على المناطق الشفافة في الطبقة. يضمن الرسم فقط على المناطق المعتمة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة القفل لتفعيل قفل الشفافية</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎯</span>
+                    <div class="cmd-name">قفل الموضع (Lock Position)</div>
+                    <div class="cmd-description">
+                        يمنع تحريك الطبقة أو تغيير موضعها. مفيد لحماية الطبقات المهمة من الحركة العرضية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة القفل لتفعيل قفل الموضع</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🖼️</span>
+                    <div class="cmd-name">قفل البكسل (Lock Pixels)</div>
+                    <div class="cmd-description">
+                        يمنع تعديل بكسل الطبقة أو حذفها. يحمي محتوى الطبقة من التعديلات العرضية.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة القفل لتفعيل قفل البكسل</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔒</span>
+                    <div class="cmd-name">قفل كامل (Lock All)</div>
+                    <div class="cmd-description">
+                        يقفل جميع خصائص الطبقة (الشفافية، الموضع، البكسل). يحمي الطبقة بالكامل من أي تعديلات.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: انقر على أيقونة القفل لتفعيل القفل الكامل</div>
+                    <span class="shortcut">غير متاح</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="color-modes" class="cmd-section">
+            <h2>🎨 أنظمة الألوان وخصائصها</h2>
+            <div class="cmd-grid">
+                <div class="cmd-item">
+                    <span class="cmd-icon">🖥️</span>
+                    <div class="cmd-name">نظام RGB (Red, Green, Blue)</div>
+                    <div class="cmd-description">
+                        نظام ألوان مخصص للعرض على الشاشات الرقمية. يجمع بين الأحمر والأخضر والأزرق لإنشاء جميع الألوان. كل لون له قيمة من 0 إلى 255. يستخدم للصور الرقمية والويب.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر RGB عند العمل على صور للويب أو العرض الرقمي</div>
+                    <span class="shortcut">Image > Mode > RGB</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🖨️</span>
+                    <div class="cmd-name">نظام CMYK (Cyan, Magenta, Yellow, Key)</div>
+                    <div class="cmd-description">
+                        نظام ألوان مخصص للطباعة. يجمع بين السماوي والأرجواني والأصفر والأسود لإنشاء جميع الألوان. يستخدم في الطباعة التجارية والتصميم المطبوع.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اختر CMYK عند إعداد الصور للطباعة التجارية</div>
+                    <span class="shortcut">Image > Mode > CMYK</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🌈</span>
+                    <div class="cmd-name">التشبع (Saturation)</div>
+                    <div class="cmd-description">
+                        يتحكم في كثافة وحيوية الألوان. التشبع العالي يجعل الألوان أكثر حيوية ووضوحاً، بينما التشبع المنخفض يجعلها باهتة وأقرب للرمادي.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Hue/Saturation لزيادة أو تقليل تشبع الألوان</div>
+                    <span class="shortcut">Ctrl+U</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">☀️</span>
+                    <div class="cmd-name">السطوع (Brightness)</div>
+                    <div class="cmd-description">
+                        يتحكم في كمية الضوء في الصورة. السطوع العالي يجعل الصورة أكثر إشراقاً، بينما السطوع المنخفض يجعلها أكثر قتامة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Brightness/Contrast لتعديل سطوع الصورة</div>
+                    <span class="shortcut">Image > Adjustments > Brightness/Contrast</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎭</span>
+                    <div class="cmd-name">التدرج اللوني (Hue)</div>
+                    <div class="cmd-description">
+                        يحدد نوع اللون نفسه (أحمر، أزرق، أخضر، إلخ). تغيير التدرج يحول الألوان إلى ألوان أخرى في عجلة الألوان دون تغيير السطوع أو التشبع.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Hue/Saturation لتغيير تدرج الألوان</div>
+                    <span class="shortcut">Ctrl+U</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">⚖️</span>
+                    <div class="cmd-name">التباين (Contrast)</div>
+                    <div class="cmd-description">
+                        يتحكم في الفرق بين الألوان الفاتحة والداكنة. التباين العالي يجعل الفروق أكثر وضوحاً، بينما التباين المنخفض يجعل الصورة أكثر نعومة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Brightness/Contrast أو Levels لضبط التباين</div>
+                    <span class="shortcut">Ctrl+L</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">درجة الحرارة اللونية (Color Temperature)</div>
+                    <div class="cmd-description">
+                        تحدد ما إذا كان اللون دافئاً (أصفر/برتقالي) أم بارداً (أزرق). مفيدة لتصحيح ألوان الصور أو إنشاء تأثيرات جوية معينة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Color Balance أو Photo Filter لضبط درجة الحرارة</div>
+                    <span class="shortcut">Image > Adjustments > Color Balance</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔍</span>
+                    <div class="cmd-name">التوازن الأبيض (White Balance)</div>
+                    <div class="cmd-description">
+                        يضمن أن اللون الأبيض يظهر أبيضاً حقيقياً في الصورة. مهم لتصحيح الألوان الطبيعية وإزالة الصبغات غير المرغوب فيها.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Color Balance أو Levels لضبط التوازن الأبيض</div>
+                    <span class="shortcut">Ctrl+L</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎯</span>
+                    <div class="cmd-name">الحيادية اللونية (Color Neutrality)</div>
+                    <div class="cmd-description">
+                        تعني عدم وجود صبغة لونية في منطقة معينة. مفيدة لإنشاء مناطق محايدة أو تصحيح الألوان المتغيرة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Color Balance لتحقيق الحيادية اللونية</div>
+                    <span class="shortcut">Image > Adjustments > Color Balance</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">📊</span>
+                    <div class="cmd-name">المنحنيات اللونية (Color Curves)</div>
+                    <div class="cmd-description">
+                        تسمح بتعديل دقيق لتوزيع الألوان في الصورة. يمكن تعديل كل لون على حدة (أحمر، أخضر، أزرق) أو جميع الألوان معاً.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم أداة Curves لتعديل دقيق للألوان</div>
+                    <span class="shortcut">Ctrl+M</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🎨</span>
+                    <div class="cmd-name">التدرج اللوني المتقدم (Advanced Color Grading)</div>
+                    <div class="cmd-description">
+                        تقنية متقدمة لتعديل الألوان باستخدام عدة أدوات معاً لإنشاء مظهر سينمائي أو فني للصور.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: اجمع بين Curves و Color Balance و Hue/Saturation</div>
+                    <span class="shortcut">عدة أدوات</span>
+                </div>
+
+                <div class="cmd-item">
+                    <span class="cmd-icon">🔬</span>
+                    <div class="cmd-name">تحليل الألوان (Color Analysis)</div>
+                    <div class="cmd-description">
+                        فحص وتحليل توزيع الألوان في الصورة باستخدام أدوات مثل Histogram و Info Panel لفهم أفضل للصورة.
+                    </div>
+                    <div class="cmd-usage">الاستخدام: استخدم Window > Histogram لتحليل توزيع الألوان</div>
+                    <span class="shortcut">Window > Histogram</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>⚡ دليل شامل لأيقونات طبقة الأوامر وأنظمة الألوان في Adobe Photoshop - تم إعداده باللغة العربية</p>
+            <p>💡 نصائح: استخدم طبقات التعديل للتعديلات غير المدمرة، وجرب أوضاع المزج المختلفة لإنشاء تأثيرات فريدة</p>
+            <p>🎨 تذكر: RGB للعرض الرقمي، CMYK للطباعة، واختبر خصائص الألوان المختلفة للحصول على أفضل النتائج</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to cmd items
+        document.querySelectorAll('.cmd-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Add keyboard shortcuts info
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'k') {
+                alert('اختصارات لوحة المفاتيح:\n\nطبقات:\nCtrl+Shift+N - إنشاء طبقة جديدة\nCtrl+J - نسخ الطبقة\nCtrl+G - إنشاء مجموعة\nCtrl+Alt+G - إنشاء قناع قطع\nDelete - حذف الطبقة\n\nالألوان:\nCtrl+L - طبقة المستويات\nCtrl+M - طبقة المنحنيات\nCtrl+U - طبقة التشبع\nCtrl+B - توازن الألوان\n\nأنظمة الألوان:\nImage > Mode > RGB - للعرض الرقمي\nImage > Mode > CMYK - للطباعة');
+            }
+        });
+    </script>
+</body>
+</html>
