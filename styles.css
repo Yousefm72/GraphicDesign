@@ -91,10 +91,10 @@ body {
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 120px 0 80px;
+    padding: 10px 0 80px;
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 110vh;
 }
 
 .hero-content {
@@ -103,7 +103,7 @@ body {
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 1rem;
     align-items: center;
 }
 
