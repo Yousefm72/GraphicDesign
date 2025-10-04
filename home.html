@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .home-icon {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        العودة للصفحة الرئيسية
+    </a>
+    <div class="container">
+        <h1>Welcome Home</h1>
+        <img src="Images/home2d.png"  style="width:50%;height: 50%; Image" />
+        
+        <div style="margin-top: 20px; text-align: right; direction: rtl; font-family: Arial, sans-serif;">
+            <p><strong>اسم الملف:</strong> Home2D</p>
+            <p><strong>الحجم:</strong> 800x800</p>
+            <p><strong>لون الخلفية:</strong> dcdff1</p>
+            <p><strong>الجزء الأول:</strong> الحجم 560x380، اللون 6b6e81</p>
+            <p><strong>الجزء الثاني:</strong> الحجم 120x200، اللون 066826</p>
+            <p><strong>الجزء الثالث:</strong> الحجم 80x120، اللون ecca0d</p>
+            <p><strong>الجزء الرابع:</strong> اللون aa0a28</p>
+            <p><strong>الجزء الخامس:</strong> الحجم 270x720، اللون 08554f</p>
+        </div>
+    </div>
+</body>
+</html>
